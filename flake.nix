@@ -15,7 +15,7 @@
           inherit system;
         };
       in
-      {
+      rec {
         packages.nanum-myeongjo = pkgs.stdenvNoCC.mkDerivation {
           name = "nanum-myeongjo";
           dontConfigue = true;
@@ -30,6 +30,9 @@
           '';
         };
 
+        overlay = prev: final: {
+          nanum-myeongjo = packages.nanum-myeongjo;
+        };
       }
     );
 }
