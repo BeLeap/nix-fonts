@@ -11,7 +11,7 @@
     }:
     {
       overlays = {
-        default = ./overlay.nix;
+        default = import ./.;
       };
     };
 }
